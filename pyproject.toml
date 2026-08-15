@@ -1,0 +1,25 @@
+[project]
+name = "garmin-sync"
+version = "0.1.0"
+description = "Garmin CN→INTL activity sync bridge — mirrors activities from Garmin China to Garmin International for Strava sync"
+readme = "README.md"
+authors = [
+    { name = "Ziye Zeng", email = "222568308+ziyezeng511@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "garminconnect>=0.3.4,<1.0",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+garmin-sync = "garmin_sync:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

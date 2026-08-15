@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.garmin-sync</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/uv</string>
+        <string>run</string>
+        <string>garmin-sync</string>
+    </array>
+
+    <!-- ⚠️ 下方三条路径是作者机器的示例路径，使用前必须改成你自己的路径 -->
+    <key>WorkingDirectory</key>
+    <string>/Users/ziyezeng/Projects/garmin-sync</string>
+
+    <!-- 每小时第 7 分钟运行；错过调度时间（关机/休眠）不补跑，等下一个小时 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Minute</key>
+        <integer>7</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/ziyezeng/Projects/garmin-sync/logs/stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/ziyezeng/Projects/garmin-sync/logs/stderr.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+    </dict>
+</dict>
+</plist>
